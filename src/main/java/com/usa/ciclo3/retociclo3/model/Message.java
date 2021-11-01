@@ -16,13 +16,13 @@ public class Message implements Serializable {
     private String  messageText;
 
     @ManyToOne
-    @JoinColumn(name="idCabin")
-    @JsonIgnoreProperties({"messages", "client", "reservations"})
+    @JoinColumn(name="idGame")
+    @JsonIgnoreProperties({"message", "client", "reservation"})
     private Game game;
 
     @ManyToOne
     @JoinColumn(name="idClient")
-    @JsonIgnoreProperties({"messages", "client", "reservations"})
+    @JsonIgnoreProperties({"message", "client", "reservation"})
     private Client client;
 
     public Integer getIdMessage() {
@@ -41,11 +41,11 @@ public class Message implements Serializable {
         this.messageText = messageText;
     }
 
-    public Game getCabin() {
+    public Game getGame() {
         return game;
     }
 
-    public void setCabin(Game game) {
+    public void setGame(Game game) {
         this.game = game;
     }
 
